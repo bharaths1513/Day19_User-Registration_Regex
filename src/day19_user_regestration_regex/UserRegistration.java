@@ -89,4 +89,20 @@ public class UserRegistration {
 			System.out.println("Phone number is !Invalid");
 	}
 
+	/*
+	 * Password Method, Rule 1 must contain Minmum 8 character
+	 */
+	public static void validPassRule1() {
+		System.out.print("Enter the Password at least eight charecter : ");
+		String passWord = scanner.nextLine();
+		String regex4 = "^[A-Z a-z 0-9]{8,}$";
+		Pattern p4 = Pattern.compile(regex4);
+		Matcher m4 = p4.matcher(passWord);
+		boolean r4 = m4.matches();
+		if (r4)
+			System.out.println("Password is Valid");
+		else
+			System.out.println("Password is !Invalid");
+	}
+
 }
