@@ -154,8 +154,20 @@ public class UserRegistration {
 			System.out.println("Password is !Invalid");
 	}
 
-	public static void main(String[] args) {
-		validPassRule4();
+	/*
+	 * Method for email
+	 */
+	public static void emailSamples() {
+		System.out.print("Enter the email : @gmail.com ");
+		String emailSample = scanner.next();
+		String regex6 = "[a-zA-Z0-9_.]*[a-zA-Z0-9]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+";
+		Pattern p6 = Pattern.compile(regex6);
+		Matcher m6 = p6.matcher(emailSample);
+		boolean r6 = m6.matches();
+		if (r6)
+			System.out.println("Valid G-mail address");
+		else
+			System.out.println("!Invalid G-mail address");
 	}
 
 }
