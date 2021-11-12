@@ -72,4 +72,21 @@ public class UserRegistration {
 
 	}
 
+	/*
+	 * Validating Mobile Number Can be start with 0 or 91
+	 */
+
+	public static void validMobileNumber() {
+		System.out.print("Enter your mobile number : ");
+		String phoneNo = scanner.nextLine();
+		String regex3 = "(91|0)?\\s?[6-9][0-9]{9}$";
+		Pattern p3 = Pattern.compile(regex3);
+		Matcher m3 = p3.matcher(phoneNo);
+		boolean r3 = m3.matches();
+		if (r3)
+			System.out.println("Phone number is Valid");
+		else
+			System.out.println("Phone number is !Invalid");
+	}
+
 }
