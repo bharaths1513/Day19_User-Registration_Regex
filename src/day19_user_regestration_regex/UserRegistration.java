@@ -144,7 +144,7 @@ public class UserRegistration {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter the PassWord at least one upper case, one numaric, one special character:  ");
 		String passWord2 = scanner.next();
-		String regex6 = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
+		String regex6 = "^([A-Z][a-z][0-9])*(?=.*[A-Z][a-z][0-9])*(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
 		Pattern p6 = Pattern.compile(regex6);
 		Matcher m6 = p6.matcher(passWord2);
 		boolean r6 = m6.matches();
@@ -168,6 +168,14 @@ public class UserRegistration {
 			System.out.println("Valid G-mail address");
 		else
 			System.out.println("!Invalid G-mail address");
+	}
+
+	public static void main(String[] args) {
+		validFirstName();
+		validLastName();
+		valideMail();
+		validPassRule4();
+
 	}
 
 }
